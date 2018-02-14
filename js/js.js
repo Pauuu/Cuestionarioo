@@ -27,12 +27,12 @@ window.onload = function () {
 
     titulos();
 
-    for (i = 0; i < obj.questionLength; i++) {
+    for (i = 0; i < 8; i++) {
+
       if (obj.question[0].type == "select") {
         preguntasSelect(0);
       }
     }
-
 
 
 

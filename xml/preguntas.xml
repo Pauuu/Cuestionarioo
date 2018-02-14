@@ -1,0 +1,107 @@
+<questions>	
+ <question id="q1">
+		<type>select</type>
+		<title>HTML son las iniciales de...</title>
+			<option>Hyper Text Transfer Protocol</option>
+			<option>File Transfer Protocol</option>
+			<option>Hypertext markup language</option>
+			<answer>2</answer>
+    </question>
+
+
+ <question id="q2">
+		<type>select</type>
+		<title>La pizza con piña es...</title>
+			<option>Para las personas que no tienen sentido del gusto</option>
+			<option>Un error</option>
+			<option>Una Diosa</option>
+			<answer>2</answer>
+    </question>
+
+
+	<question id='q3'>
+		<type>multiple</type>
+		<title>Marca los animales</title>
+			<option>gato</option>
+			<option>verde</option>
+			<option>perro</option>
+			<option>tomate</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>
+
+
+	<question id='q4'>
+		<type>multiple</type>
+		<title>Marca las opciones que no sean colores</title>
+			<option>Rojo</option>
+			<option>Elefante</option>
+			<option>Naranja</option>
+			<option>Naranja</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>
+
+
+    <question id="q5">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+			<answer>23</answer>
+    </question>
+
+
+	<question id="q6">
+		<type>text</type>
+		<title>2+2= </title>
+		<answer>4656543</answer>
+    </question>
+
+
+	<question id='q7'>
+		<type>radio</type>
+		<title>Titulo a la pregunta 7</title>
+			<option>uno</option>
+			<option>verde</option>
+			<option>fresa</option>
+			<option>violeta</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>
+
+
+	<question id='q8'>
+		<type>radio</type>
+		<title>Titulo a la pregunta 8</title>
+			<option>int</option>
+			<option>String</option>
+			<option>Teclas</option>
+			<option>AHHHHHHHH</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>
+
+   
+     <question id="q9">
+		<type>checkbox</type>
+		<title>Uno mas dos menos dos mas uno</title>
+			<option>uuuu</option>
+			<option>Telegrama</option>
+			<option>fresa</option>
+			<option>violeta</option>
+			<answer>0</answer>
+			<answer>2</answer>
+    </question>
+
+
+	<question id="q10">
+		<type>checkbox</type>
+		<title>Ultima pregunta de todas</title>
+			<option>a</option>
+			<option>b</option>
+			<option>c</option>
+			<option>d</option>
+			<answer>0</answer>
+			<answer>2</answer>
+    </question>
+</questions>
+
