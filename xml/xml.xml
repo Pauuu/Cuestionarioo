@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+	<question>
+		<type>text</type>
+		<title>1. ¿Alto?</title>
+		<option></option>
+		<answer>Alto</answer> <!--la respuesta ha de ser texto(la unnica que es texto)-->
+	</question>
+	<question>
+		<type>text</type>
+		<title>2. ¿Bajo?</title>
+		<option></option>
+		<answer>Bajo</answer>
+	</question>
+	<question>
+		<type>select</type>
+		<title>3. Pregunta 3</title>
+		<option>uno</option>
+		<option>dos</option>
+		<option>tres</option>
+		<option>cuatro</option>
+		<answer>3</answer>
+	</question>
+	<question>
+		<type>select</type>
+		<title>4. Pregunta 4</title>
+		<option>uno</option>
+		<option>dos</option>
+		<option>tres</option>
+		<option>cuatro</option>
+		<answer>4</answer>
+	</question>
+	<question>
+		<type>multiple</type> <!--ha de haber mas de una respuesta en multiple y checkbox-->
+		<title>5. Pregunta 5</title>
+		<option>uno</option>
+		<option>dos</option>
+		<option>camello</option>
+		<option>perro</option>
+		<option>cinco</option>
+		<answer>3</answer>
+		<answer>4</answer>
+	</question>
+	<question>
+		<type>multiple</type>
+		<title>6. Pregunta 6</title>
+		<option>cien</option>
+		<option>doscientos</option>
+		<option>trescientos</option>
+		<option>cuatrocientos</option>
+		<option>cinco-cinetos</option>
+		<answer>5</answer>
+		<answer>1</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>7. Pregunta 7</title>
+		<option>chek</option>
+		<option>box</option>
+		<option>jaja</option>
+		<option>si</option>
+		<option>soy yo</option>
+		<answer>2</answer>
+		<answer>3</answer>
+		<answer>5</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>8. Pregunta 8</title>
+		<option>el</option>
+		<option>chocu</option>
+		<option>34</option>
+		<option>45</option>
+		<option>57</option>
+		<answer>1</answer>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>9. Que es más admirable</title>
+		<option>Tirarse un pedo en público</option>
+		<option>Tirarse mear de pie sin mojarte</option>
+		<option>No lavarte el culo</option>
+		<option>Comer pizza sin piña</option>
+		<option>Conseguir un premio novel</option>
+		<answer>4</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>10. Pregunta 10</title>
+		<option>ya</option>
+		<option>solo</option>
+		<option>queda</option>
+		<option>esta</option>
+		<option>1</option>
+		<answer>5</answer>
+	</question>
+</questions>

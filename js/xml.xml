@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+	<question>
+		<type>text</type>
+		<title>Pregunta 1</title>
+		<option></option>
+		<answer>Alto</answer> <!--la respuesta ha de ser texto(la unnica que es texto)-->
+	</question>
+	<question>
+		<type>text</type>
+		<title>Pregunta 2</title>
+		<option></option>
+		<answer></answer>
+	</question>
+	<question>
+		<type>select</type>
+		<title>Pregunta 3</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>select</type>
+		<title>Pregunta 4</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>1</answer>
+	</question>
+	<question>
+		<type>multiple</type> <!--ha de haber mas de una respuesta en multiple y checkbox-->
+		<title>Pregunta 5</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>3</answer>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>multiple</type>
+		<title>Pregunta 6</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>5</answer>
+		<answer>1</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>Pregunta 7</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>2</answer>
+		<answer>3</answer>
+		<answer>5</answer>
+	</question>
+	<question>
+		<type>checkbox</type>
+		<title>Pregunta 8</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<answer>1</answer>
+		<answer>2</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>Pregunta 9</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option>4</option>
+		<answer>5</answer>
+	</question>
+	<question>
+		<type>radio</type>
+		<title>Pregunta 10</title>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option></option>
+		<option>1</option>
+		<answer>5</answer>
+	</question>
+</questions>
