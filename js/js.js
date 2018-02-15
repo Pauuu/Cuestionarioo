@@ -1,7 +1,7 @@
 window.onload = function () {
 
   // fichoro xml que está en el servidor rawgit
-  var url = "https://cdn.rawgit.com/Pauuu/JSONprueba/7fabcde0/json/json.json";
+  var url = "https://rawgit.com/Pauuu/Cuestionarioo/master/json/json.json";
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -13,48 +13,56 @@ window.onload = function () {
   xhttp.open("GET", url, true); //url del fichero
   xhttp.send();
 
+}
 
 
-  // función personalizada que gestiona la respuesta a la petición de fichero
-  function gestionarJson(dadesJson) {
-    var obj = JSON.parse(dadesJson);
-
-    var questionLength = Object.keys(obj.question).length;
-    var questionsSelect;
-    var questionCheckbox;
+// función personalizada que gestiona la respuesta a la petición de fichero
+function gestionarJson(dadesJson) {
+  var obj = JSON.parse(dadesJson);
 
 
+  var questionLength = Object.keys(obj.question).length;
 
-    titulos();
-
-    for (i = 0; i < 8; i++) {
-
-      if (obj.question[0].type == "select") {
-        preguntasSelect(0);
-      }
-    }
+  for (q = 0; q < obj.question.length; q++) {
 
 
+    document.getElementsByTagName("h3")[q].innerHTML = obj.question[q].title;
 
-    //funciones   **********************
-    function preguntasSelect(numQuestion) {
-      var opcionSelect = [];
-      var nopt = obj.question[numQuestion].option.length;
+
+    //SEELECT\\
+    if (obj.question[q].type == "select") {
+
+      var opcionesSelect = [];
+      var nopt = obj.question[q].option.length;
 
       for (i = 0; i < nopt; i++) {
-        opcionSelect[i] = obj.question[numQuestion].option[i];
-        document.getElementById("0").getElementsByTagName("option")[i].innerHTML = opcionSelect[i];
+        opcionesSelect[i] = obj.question[q].option[i];
       }
+      mostrarSelect(q, opcionesSelect);
     }
+  }
+}
+
+//FUNCIONES//
 
 
+function presguntasNumber(numQuestion) {
+  numeroSecreto = obj.question[numQuestion];
+}
 
-    function titulos() {
-      for (i = 0; i < questionLength; i++) {
-        document.getElementsByTagName("h3")[i].innerHTML = obj.question[i].title;
-      }
-    }
+function mostrarSelect(q, opcionSelect) {
 
+  for (i = 0; i < opcionSelect.length; i++) {
+    document.getElementsByTagName("select")[q].getElementsByTagName("option")[i].innerHTML = opcionSelect[i];
+  }
+}
 
+function presguntasNumber(numQuestion) {
+  numeroSecreto = obj.question[numQuestion];
+}
+
+function titulos() { //cambiar
+  for (i = 0; i < questionLength; i++) {
+    document.getElementsByTagName("h3")[i].innerHTML = obj.question[i].title;
   }
 }
