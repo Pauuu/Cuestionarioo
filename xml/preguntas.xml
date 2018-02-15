@@ -1,5 +1,17 @@
 <questions>	
- <question id="q1">
+  <question id="1">
+		<type>text</type>
+		<title>Adivina el número secreto... </title>
+			<answer>23</answer>
+    </question>
+
+	<question id="2">
+		<type>text</type>
+		<title>2+2= </title>
+		<answer>4656543</answer>
+    </question>
+
+ 	<question id="3">
 		<type>select</type>
 		<title>HTML son las iniciales de...</title>
 			<option>Hyper Text Transfer Protocol</option>
@@ -8,8 +20,7 @@
 			<answer>2</answer>
     </question>
 
-
- <question id="q2">
+ 	<question id="4">
 		<type>select</type>
 		<title>La pizza con piña es...</title>
 			<option>Para las personas que no tienen sentido del gusto</option>
@@ -18,8 +29,7 @@
 			<answer>2</answer>
     </question>
 
-
-	<question id='q3'>
+	<question id='5'>
 		<type>multiple</type>
 		<title>Marca los animales</title>
 			<option>gato</option>
@@ -30,8 +40,7 @@
 			<answer>2</answer>
 	</question>
 
-
-	<question id='q4'>
+	<question id='6'>
 		<type>multiple</type>
 		<title>Marca las opciones que no sean colores</title>
 			<option>Rojo</option>
@@ -42,46 +51,7 @@
 			<answer>2</answer>
 	</question>
 
-
-    <question id="q5">
-		<type>text</type>
-		<title>Adivina el número secreto... </title>
-			<answer>23</answer>
-    </question>
-
-
-	<question id="q6">
-		<type>text</type>
-		<title>2+2= </title>
-		<answer>4656543</answer>
-    </question>
-
-
-	<question id='q7'>
-		<type>radio</type>
-		<title>Titulo a la pregunta 7</title>
-			<option>uno</option>
-			<option>verde</option>
-			<option>fresa</option>
-			<option>violeta</option>
-			<answer>0</answer>
-			<answer>2</answer>
-	</question>
-
-
-	<question id='q8'>
-		<type>radio</type>
-		<title>Titulo a la pregunta 8</title>
-			<option>int</option>
-			<option>String</option>
-			<option>Teclas</option>
-			<option>AHHHHHHHH</option>
-			<answer>0</answer>
-			<answer>2</answer>
-	</question>
-
-   
-     <question id="q9">
+     <question id="7">
 		<type>checkbox</type>
 		<title>Uno mas dos menos dos mas uno</title>
 			<option>uuuu</option>
@@ -92,8 +62,7 @@
 			<answer>2</answer>
     </question>
 
-
-	<question id="q10">
+	<question id="8">
 		<type>checkbox</type>
 		<title>Ultima pregunta de todas</title>
 			<option>a</option>
@@ -103,5 +72,26 @@
 			<answer>0</answer>
 			<answer>2</answer>
     </question>
-</questions>
 
+	<question id='9'>
+		<type>radio</type>
+		<title>Titulo a la pregunta 7</title>
+			<option>uno</option>
+			<option>verde</option>
+			<option>fresa</option>
+			<option>violeta</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>
+
+	<question id='9'>
+		<type>radio</type>
+		<title>Titulo a la pregunta 8</title>
+			<option>int</option>
+			<option>String</option>
+			<option>Teclas</option>
+			<option>AHHHHHHHH</option>
+			<answer>0</answer>
+			<answer>2</answer>
+	</question>   
+</questions>

@@ -9,7 +9,7 @@ window.onload = function () {
       // función personalizada que gestiona la respuesta a la petición de fichero
       gestionarJson(this.responseText);
     }
-  }
+  };
   xhttp.open("GET", url, true); //url del fichero
   xhttp.send();
 
@@ -23,13 +23,15 @@ function gestionarJson(dadesJson) {
 
   var questionLength = Object.keys(obj.question).length;
 
+
+
   for (q = 0; q < obj.question.length; q++) {
 
 
     document.getElementsByTagName("h3")[q].innerHTML = obj.question[q].title;
 
 
-    //SEELECT\\
+    //SEELECT
     if (obj.question[q].type == "select") {
 
       var opcionesSelect = [];
@@ -40,14 +42,36 @@ function gestionarJson(dadesJson) {
       }
       mostrarSelect(q, opcionesSelect);
     }
+	
+	//CHECKBOX
+    if (obj.question[q].type == "checkbox") {
+
+      var opcionesCheckbox = [];
+      var nopt = obj.question[q].option.length;
+
+      for (i = 0; i < nopt; i++) {
+        opcionesCheckbox[q] = obj.question[q].option[i];
+      }
+    }
   }
 }
 
-//FUNCIONES//
+//FUNCIONES
 
 
 function presguntasNumber(numQuestion) {
   numeroSecreto = obj.question[numQuestion];
+}
+
+function mostrarCheckbox(q, opcionCheckbox) {
+
+  for (i = 0; i < opcionCheckbox.length; i++) {
+
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+    label.innerHTML = opcionesCheckbox[i];
+    input.
+  }
 }
 
 function mostrarSelect(q, opcionSelect) {
