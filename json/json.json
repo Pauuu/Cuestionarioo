@@ -1,137 +1,119 @@
- {
-      "question": [
-         {
-            "type": "text",
-            "title": "Adivina el número secreto...",
-            "answer": [
-               "23"
-            ],
-            "_id": "1"
-         },
-         {
-            "type": "text",
-            "title": "2+2=",
-            "answer": [
-               "4656543"
-            ],
-            "_id": "2"
-         },
-         {
-            "type": "select",
-            "title": "HTML son las iniciales de...",
-            "option": [
-               "Hyper Text Transfer Protocol",
-               "File Transfer Protocol",
-               "Hypertext markup language"
-            ],
-            "answer": [
-               "2"
-            ],
-            "_id": "3"
-         },
-         {
-            "type": "select",
-            "title": "La pizza con piña es...",
-            "option": [
-               "Para las personas que no tienen sentido del gusto",
-               "Un error",
-               "Una Diosa"
-            ],
-            "answer": [
-               "2"
-            ],
-            "_id": "4"
-         },
-         {
-            "type": "multiple",
-            "title": "Marca los animales",
-            "option": [
-               "gato",
-               "verde",
-               "perro",
-               "tomate"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "5"
-         },
-         {
-            "type": "multiple",
-            "title": "Marca las opciones que no sean colores",
-            "option": [
-               "Rojo",
-               "Elefante",
-               "Naranja",
-               "Naranja"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "6"
-         },
-         {
-            "type": "checkbox",
-            "title": "Uno mas dos menos dos mas uno",
-            "option": [
-               "uuuu",
-               "Telegrama",
-               "fresa",
-               "violeta"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "7"
-         },
-         {
-            "type": "checkbox",
-            "title": "Ultima pregunta de todas",
-            "option": [
-               "a",
-               "b",
-               "c",
-               "d"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "8"
-         },
-         {
-            "type": "radio",
-            "title": "Titulo a la pregunta 7",
-            "option": [
-               "uno",
-               "verde",
-               "fresa",
-               "violeta"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "9"
-         },
-         {
-            "type": "radio",
-            "title": "Titulo a la pregunta 8",
-            "option": [
-               "int",
-               "String",
-               "Teclas",
-               "AHHHHHHHH"
-            ],
-            "answer": [
-               "0",
-               "2"
-            ],
-            "_id": "9"
-         }
-      ]
-   }
+{
+    "question": [
+      {
+        "type": "text",
+        "title": "Adivina el número secreto... ",
+        "answer": "23"
+      },
+      {
+        "type": "text",
+        "title": "2+2= ",
+        "answer": "4656543"
+      },
+      {
+        "type": "select",
+        "title": "HTML son las iniciales de...",
+        "option": [
+          "Hyper Text Transfer Protocol",
+          "File Transfer Protocol",
+          "Hypertext markup language"
+        ],
+        "answer": "2"
+      },
+      {
+        "type": "select",
+        "title": "La pizza con piña es...",
+        "option": [
+          "Para las personas que no tienen sentido del gusto",
+          "Un error",
+          "Una Diosa"
+        ],
+        "answer": "2"
+      },
+      {
+        "type": "multiple",
+        "title": "Marca los animales",
+        "option": [
+          "gato",
+          "verde",
+          "perro",
+          "tomate"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "type": "multiple",
+        "title": "Marca las opciones que no sean colores",
+        "option": [
+          "Rojo",
+          "Elefante",
+          "Naranja",
+          "Naranja"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "type": "checkbox",
+        "title": "Uno mas dos menos dos mas uno",
+        "option": [
+          "uuuu",
+          "Telegrama",
+          "fresa",
+          "violeta"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "type": "checkbox",
+        "title": "Ultima pregunta de todas",
+        "option": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "type": "radio",
+        "title": "Titulo a la pregunta 7",
+        "option": [
+          "uno",
+          "verde",
+          "fresa",
+          "violeta"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      },
+      {
+        "type": "radio",
+        "title": "Titulo a la pregunta 8",
+        "option": [
+          "int",
+          "String",
+          "Teclas",
+          "AHHHHHHHH"
+        ],
+        "answer": [
+          "0",
+          "2"
+        ]
+      }
+    ]
+  }
 
