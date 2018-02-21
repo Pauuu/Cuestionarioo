@@ -22,6 +22,7 @@ function gestionarJson(dadesJson) {
   var obj = JSON.parse(dadesJson);
 
   var questionLength = Object.keys(obj.question).length;
+  var preg = document.getElementsByClassName("preg"); //ERR
 
 
   //TEXT****************************/
@@ -34,11 +35,13 @@ function gestionarJson(dadesJson) {
 
   //**text**************************/
 
+
+
   //SELECT**************************/
   var preguntaSelect;
   var opSelect = [];
 
-  for (i = 2; i < 4; i++) {  //desde pregunta 3 a 4 (i-1)
+  for (i = 2; i < 4; i++) {
     preguntaSelect = obj.question[i].title;
 
     for (preg = 0; preg < obj.question[i].option.length; preg++) {
@@ -47,23 +50,31 @@ function gestionarJson(dadesJson) {
     mostrarSelect(i, preguntaSelect, opSelect);
   }
   //**select************************/
-}
 
-//FUNCIONES
 
-function mostrarText(pregunta) {
-  for (i = 0; i < pregunta.length; i++) {
-    document.getElementsByTagName("h3")[i].innerHTML = pregunta[i];
+  //FUNCIONES
+
+  function mostrarText(pregunta) {
+    for (i = 0; i < pregunta.length; i++) {
+      document.getElementsByTagName("h3")[i].innerHTML = pregunta[i];
+    }
   }
-}
 
 
-function mostrarSelect(numPreg, pregunta, opciones) {
-  var createOption = document.createElement('option');
+  function mostrarSelect(numPreg, pregunta, opciones) {
+    var option = document.createElement("option");
+    var createButton = document.createElement('button');
 
-  document.getElementsByTagName("h3")[numPreg].innerHTML = pregunta;
+    var select = preg[numPreg].getElementsByTagName("select")[0];
 
-  document.getElementsByTagName("select")[0].createOption;
+    document.getElementsByTagName("h3")[numPreg].innerHTML = pregunta;
 
-  document.getElementsByName("select")[0].getElementsByTagName("option")[0].innerHTML = pregunta;
+    for (i = 0; i < opciones.length; i++) {
+      option.text = opciones[i];
+
+      option.value = i+1;
+      select.options.add(option);
+    }
+  }
+
 }

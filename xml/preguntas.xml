@@ -1,35 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE questions SYSTEM 'validacion.dtd'>
+
 <questions>	
-  <question id="1">
+  	<question>
 		<type>text</type>
 		<title>Adivina el número secreto... </title>
 			<answer>23</answer>
-    </question>
+	</question>
 
-	<question id="2">
+	<question>
 		<type>text</type>
 		<title>2+2= </title>
 		<answer>4656543</answer>
-    </question>
+	</question>
 
- 	<question id="3">
+	<question>
 		<type>select</type>
 		<title>HTML son las iniciales de...</title>
 			<option>Hyper Text Transfer Protocol</option>
 			<option>File Transfer Protocol</option>
 			<option>Hypertext markup language</option>
 			<answer>2</answer>
-    </question>
+	</question>
 
- 	<question id="4">
+	<question>
 		<type>select</type>
 		<title>La pizza con piña es...</title>
 			<option>Para las personas que no tienen sentido del gusto</option>
 			<option>Un error</option>
 			<option>Una Diosa</option>
 			<answer>2</answer>
-    </question>
+	</question>
 
-	<question id='5'>
+	<question>
 		<type>multiple</type>
 		<title>Marca los animales</title>
 			<option>gato</option>
@@ -40,7 +44,7 @@
 			<answer>2</answer>
 	</question>
 
-	<question id='6'>
+	<question>
 		<type>multiple</type>
 		<title>Marca las opciones que no sean colores</title>
 			<option>Rojo</option>
@@ -51,7 +55,7 @@
 			<answer>2</answer>
 	</question>
 
-     <question id="7">
+	<question>
 		<type>checkbox</type>
 		<title>Uno mas dos menos dos mas uno</title>
 			<option>uuuu</option>
@@ -60,9 +64,9 @@
 			<option>violeta</option>
 			<answer>0</answer>
 			<answer>2</answer>
-    </question>
+	</question>
 
-	<question id="8">
+	<question>
 		<type>checkbox</type>
 		<title>Ultima pregunta de todas</title>
 			<option>a</option>
@@ -71,9 +75,9 @@
 			<option>d</option>
 			<answer>0</answer>
 			<answer>2</answer>
-    </question>
+	</question>
 
-	<question id='9'>
+	<question>
 		<type>radio</type>
 		<title>Titulo a la pregunta 7</title>
 			<option>uno</option>
@@ -84,7 +88,7 @@
 			<answer>2</answer>
 	</question>
 
-	<question id='9'>
+	<question>
 		<type>radio</type>
 		<title>Titulo a la pregunta 8</title>
 			<option>int</option>
