@@ -25,56 +25,58 @@ function gestionarJson(dadesJson) {
   var preg = document.getElementsByClassName("preg"); //ERR
 
 
-  //TEXT****************************/
-  var preguntasText = [];
+  //**TEXT*************************/
+  var preguntasText;
 
   for (i = 0; i < 2; i++) { //  TODOS LOS BUCLES EMPIEZAN POR 0 HASTA LLEGRAR A LA PREGUNTA i-1
-    preguntasText[i] = obj.question[i].title;
+    preguntasText = obj.question[i].title;
+    mostrarText(i, preguntasText);
   }
-  mostrarText(preguntasText);
 
   //**text**************************/
 
 
 
-  //SELECT**************************/
-  var preguntaSelect;
-  var opSelect = [];
+  //**SELECT************************/
 
   for (i = 2; i < 4; i++) {
-    preguntaSelect = obj.question[i].title;
+
+    var tituloSelect = obj.question[i].title; //ALMACENA LA PREGUNTA
+    var numOpcionesSelect = obj.question[i].option.length; //ALMACENA EL NUM. DE OPCIONES SELECT
+    var opSelect = []; //ALMACENA EN EL ARRAY CADA UNA DE LAS PREGUNTAS
 
     for (preg = 0; preg < obj.question[i].option.length; preg++) {
       opSelect[preg] = obj.question[i].option[preg];
     }
-    mostrarSelect(i, preguntaSelect, opSelect);
+    mostrarSelect(i, tituloSelect, opSelect);
   }
   //**select************************/
 
 
-  //FUNCIONES
-
-  function mostrarText(pregunta) {
-    for (i = 0; i < pregunta.length; i++) {
-      document.getElementsByTagName("h3")[i].innerHTML = pregunta[i];
-    }
-  }
-
-
-  function mostrarSelect(numPreg, pregunta, opciones) {
-    var option = document.createElement("option");
-    var createButton = document.createElement('button');
-
-    var select = preg[numPreg].getElementsByTagName("select")[0];
-
-    document.getElementsByTagName("h3")[numPreg].innerHTML = pregunta;
-
-    for (i = 0; i < opciones.length; i++) {
-      option.text = opciones[i];
-
-      option.value = i+1;
-      select.options.add(option);
-    }
-  }
-
 }
+
+//FUNCIONES
+
+
+function mostrarSelect(numPreg, titulo, opciones) {
+
+  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
+
+  var select = document.getElementsByTagName("select")[0];
+
+  for (j = 0; j < opciones.length; j++) {
+    var option = document.createElement("option");
+
+    option.text = opciones[j];
+    option.value = j + 1;
+    select.options.add(option);
+  }
+}
+
+
+function mostrarText(i, pregunta) {
+  document.getElementsByTagName("h3")[i].innerHTML = pregunta;
+}
+
+
+

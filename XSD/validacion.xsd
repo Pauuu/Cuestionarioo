@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="questions">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="question" maxOccurs="10" minOccurs="0">
+                <xs:sequence>
+                    <xs:element name="type"/>
+                    <xs:element name="title"/>
+                    <xs:element name="option" nimOccurs="0"/>
+                    <xs:element name="answer" minOccurs="1"/>
+                </xs:sequence>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>
