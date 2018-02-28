@@ -22,7 +22,7 @@ function gestionarJson(dadesJson) {
   var obj = JSON.parse(dadesJson);
 
   var questionLength = Object.keys(obj.question).length;
-  var preg = document.getElementsByClassName("preg"); //ERR
+  var preg = document.getElementsByClassName("preg");
 
 
   //**TEXT*************************/
@@ -90,8 +90,21 @@ function gestionarJson(dadesJson) {
   //**checkbox***********************/
 
   //RADIO***************************/
-  
-  
+  var radio = 0;
+
+  for(i = 8; i < 10; i++){
+    
+    var tituloRadio = obj.question[i].title;
+    var opRadio = [];
+
+    for(preg = 0; preg < obj.question[i].option.length; preg++){
+      opRadio[preg] = obj.question[i].option[preg];
+    }
+
+    mostrarRadio(i, tituloRadio, opRadio, radio);
+  }
+
+
   //**radio*************************/
 
 
@@ -104,26 +117,58 @@ function mostrarCheckbox(numPreg, titulo, opciones, c) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
 
-  var checkboxContainer = document.getElementsByClassName("checkboxDiv")[c];
+  var radioContainer = document.getElementsByClassName("checkboxDiv")[c];
 
-  for (i = 0; i < opciones.length; i++) {
+  for (j = 0; j < opciones.length; j++) {
 
     var input = document.createElement("input");
     var label = document.createElement("label");
 
-    label.innerHTML = opciones[i];
-    label.setAttribute("for", "color_" + i);
+    label.innerHTML = opciones[j];
+    label.setAttribute("for", "color_" + j);
 
     input.type = "checkbox";
     input.name = "color";
-    input.id = "color_" + i;;
+    input.id = "color_" + j;
 
-    checkboxContainer.appendChild(input);
-    checkboxContainer.appendChild(label);
-    checkboxContainer.appendChild(document.createElement("br"));
+    radioContainer.appendChild(input);
+    radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
 
   }
 }
+
+
+
+
+
+
+
+function mostrarRadio(numPreg, titulo, opciones, r) {
+
+  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
+
+  var radioContainer = document.getElementsByClassName("radioDiv")[r];
+
+  for (j = 0; j < opciones.length; j++) {
+
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+
+    label.innerHTML = opciones[j];
+    label.setAttribute("for", "color_" + j);
+
+    input.type = "radio";
+    input.name = "color";
+    input.id = "color_" + j;
+
+    radioContainer.appendChild(input);
+    radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+
+  }
+}
+
 
 
 
@@ -142,9 +187,6 @@ function mostrarMultiple(numPreg, titulo, opciones, s) {
   }
 }
 
-function mostrarRadio(numPreg, titulo) {
-  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
-}
 
 
 
