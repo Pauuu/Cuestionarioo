@@ -60,9 +60,9 @@
       },
       {
         "type": "checkbox",
-        "title": "Uno mas dos menos dos mas uno",
+        "title": "QUE FRUTAS NI QUE FRUTAS",
         "option": [
-          "uuuu",
+          "Melocotoes",
           "Telegrama",
           "fresa",
           "violeta"
@@ -74,7 +74,7 @@
       },
       {
         "type": "checkbox",
-        "title": "Ultima pregunta de todas",
+        "title": "Anteantepeniltima pregunta de todas",
         "option": [
           "a",
           "b",
@@ -88,7 +88,7 @@
       },
       {
         "type": "radio",
-        "title": "Titulo a la pregunta 7",
+        "title": "Titulo a la pregunta 9",
         "option": [
           "uno",
           "verde",
@@ -102,7 +102,7 @@
       },
       {
         "type": "radio",
-        "title": "Titulo a la pregunta 8",
+        "title": "Titulo a la pregunta 10",
         "option": [
           "int",
           "String",

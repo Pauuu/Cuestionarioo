@@ -73,6 +73,8 @@ function gestionarJson(dadesJson) {
   //**multiple***********************/
 
   //CHECKBOX*************************/
+  var checkbox = 0;
+
   for (i = 6; i < 8; i++) {
 
     var tituloCheckbox = obj.question[i].title;
@@ -82,9 +84,15 @@ function gestionarJson(dadesJson) {
       opCheckbox[preg] = obj.question[i].option[preg];
     }
 
-    mostrarCheckbox(i, tituloCheckbox, opCheckbox);
+    mostrarCheckbox(i, tituloCheckbox, opCheckbox, checkbox);
+    checkbox++;
   }
   //**checkbox***********************/
+
+  //RADIO***************************/
+  
+  
+  //**radio*************************/
 
 
 }
@@ -92,11 +100,11 @@ function gestionarJson(dadesJson) {
 //FUNCIONES
 
 
-function mostrarCheckbox(numPreg, titulo, opciones) {
+function mostrarCheckbox(numPreg, titulo, opciones, c) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
 
-  var checkboxContainer = document.getElementsByClassName("checkboxDiv");
+  var checkboxContainer = document.getElementsByClassName("checkboxDiv")[c];
 
   for (i = 0; i < opciones.length; i++) {
 
