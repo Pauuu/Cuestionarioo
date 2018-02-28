@@ -38,19 +38,53 @@ function gestionarJson(dadesJson) {
 
 
   //**SELECT************************/
+  var select = 0; //ENUMERA los selects
+
 
   for (i = 2; i < 4; i++) {
 
     var tituloSelect = obj.question[i].title; //ALMACENA LA PREGUNTA
-    var numOpcionesSelect = obj.question[i].option.length; //ALMACENA EL NUM. DE OPCIONES SELECT
     var opSelect = []; //ALMACENA EN EL ARRAY CADA UNA DE LAS PREGUNTAS
 
     for (preg = 0; preg < obj.question[i].option.length; preg++) {
       opSelect[preg] = obj.question[i].option[preg];
     }
-    mostrarSelect(i, tituloSelect, opSelect);
+
+    mostrarSelect(i, tituloSelect, opSelect, select);
+    select++;
   }
   //**select************************/
+
+
+
+  //MULTIPLE*************************/
+  for (i = 4; i < 6; i++) {
+
+    var tituloMultiple = obj.question[i].title; //ALMACENA LA PREGUNTA
+    var opMultiple = []; //ALMACENA EN EL ARRAY CADA UNA DE LAS PREGUNTAS
+
+    for (preg = 0; preg < obj.question[i].option.length; preg++) {
+      opMultiple[preg] = obj.question[i].option[preg];
+    }
+
+    mostrarMultiple(i, tituloMultiple, opMultiple, select);
+    select++;
+  }
+  //**multiple***********************/
+
+  //CHECKBOX*************************/
+  for (i = 6; i < 8; i++) {
+
+    var tituloCheckbox = obj.question[i].title;
+    var opCheckbox = [];
+
+    for (preg = 0; preg < obj.question[i].option.length; preg++) {
+      opCheckbox[preg] = obj.question[i].option[preg];
+    }
+
+    mostrarCheckbox(i, tituloCheckbox, opCheckbox);
+  }
+  //**checkbox***********************/
 
 
 }
@@ -58,11 +92,59 @@ function gestionarJson(dadesJson) {
 //FUNCIONES
 
 
-function mostrarSelect(numPreg, titulo, opciones) {
+function mostrarCheckbox(numPreg, titulo, opciones) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
 
-  var select = document.getElementsByTagName("select")[0];
+  var checkboxContainer = document.getElementsByClassName("checkboxDiv");
+
+  for (i = 0; i < opciones.length; i++) {
+
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+
+    label.innerHTML = opciones[i];
+    label.setAttribute("for", "color_" + i);
+
+    input.type = "checkbox";
+    input.name = "color";
+    input.id = "color_" + i;;
+
+    checkboxContainer.appendChild(input);
+    checkboxContainer.appendChild(label);
+    checkboxContainer.appendChild(document.createElement("br"));
+
+  }
+}
+
+
+
+function mostrarMultiple(numPreg, titulo, opciones, s) {
+
+  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
+
+  var select = document.getElementsByTagName("select")[s];
+
+  for (j = 0; j < opciones.length; j++) {
+    var option = document.createElement("option");
+
+    option.text = opciones[j];
+    option.value = j + 1;
+    select.options.add(option);
+  }
+}
+
+function mostrarRadio(numPreg, titulo) {
+  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
+}
+
+
+
+function mostrarSelect(numPreg, titulo, opciones, s) {
+
+  document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
+
+  var select = document.getElementsByTagName("select")[s];
 
   for (j = 0; j < opciones.length; j++) {
     var option = document.createElement("option");
@@ -74,9 +156,19 @@ function mostrarSelect(numPreg, titulo, opciones) {
 }
 
 
-function mostrarText(i, pregunta) {
-  document.getElementsByTagName("h3")[i].innerHTML = pregunta;
+
+
+
+
+function mostrarText(i, titulo) {
+  document.getElementsByTagName("h3")[i].innerHTML = titulo;
 }
+
+
+
+
+
+
 
 
 
