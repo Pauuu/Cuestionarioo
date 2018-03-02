@@ -6,13 +6,13 @@
 	  	<question>
 			<type>text</type>
 			<title>Adivina el número secreto... </title>
-				<answer>23</answer>
+				<answer>55</answer>
 		</question>
 
 		<question>
 			<type>text</type>
 			<title>2+2= </title>
-			<answer>4656543</answer>
+			<answer>4</answer>
 		</question>
 
 		<question>
@@ -36,10 +36,10 @@
 		<question>
 			<type>multiple</type>
 			<title>Marca los animales</title>
-				<option>gato</option>
-				<option>verde</option>
-				<option>perro</option>
-				<option>tomate</option>
+				<option>Gato</option>
+				<option>Verde</option>
+				<option>Perro</option>
+				<option>Tomate</option>
 				<answer>0</answer>
 				<answer>2</answer>
 		</question>
@@ -57,29 +57,29 @@
 
 		<question>
 			<type>checkbox</type>
-			<title>Uno mas dos menos dos mas uno</title>
-				<option>uuuu</option>
-				<option>Telegrama</option>
-				<option>fresa</option>
-				<option>violeta</option>
+			<title>¿Que ingredientes son válidos para una pizza?</title>
+				<option>Bacon</option>
+				<option>Piña</option>
+				<option>Jamon</option>
+				<option>Olivas</option>
 				<answer>0</answer>
 				<answer>2</answer>
 		</question>
 
 		<question>
 			<type>checkbox</type>
-			<title>Ultima pregunta de todas</title>
-				<option>a</option>
-				<option>b</option>
-				<option>c</option>
-				<option>d</option>
+			<title>¿Que colores, combinados entre si, forman el verda?</title>
+				<option>Amarillo</option>
+				<option>Rojo</option>
+				<option>Azul</option>
+				<option>Blanco</option>
 				<answer>0</answer>
 				<answer>2</answer>
 		</question>
 
 		<question>
 			<type>radio</type>
-			<title>Titulo a la pregunta 7</title>
+			<title>Si van dos y cae uno, ¿quien es el que cae?</title>
 				<option>uno</option>
 				<option>verde</option>
 				<option>fresa</option>
@@ -90,11 +90,11 @@
 
 		<question>
 			<type>radio</type>
-			<title>Titulo a la pregunta 8</title>
-				<option>int</option>
-				<option>String</option>
-				<option>Teclas</option>
-				<option>AHHHHHHHH</option>
+			<title>Si la luna es un pez y el sol es un pez, ¿es la tierra un pez?</title>
+				<option>Si</option>
+				<option>No</option>
+				<option>Es un tiburón</option>
+				<option>La luna y el sol no son peces</option>
 				<answer>0</answer>
 				<answer>2</answer>
 		</question>   

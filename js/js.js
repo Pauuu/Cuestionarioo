@@ -176,8 +176,6 @@ function mostrarRadio(numPreg, titulo, opcionesR, r) {
   }
 }
 
-
-
 function mostrarMultiple(numPreg, titulo, opciones, s) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
@@ -193,9 +191,6 @@ function mostrarMultiple(numPreg, titulo, opciones, s) {
   }
 }
 
-
-
-
 function mostrarSelect(numPreg, titulo, opciones, s) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
@@ -210,20 +205,12 @@ function mostrarSelect(numPreg, titulo, opciones, s) {
     select.options.add(option);
   }
 }
-
-
-
-
-
-
 function mostrarText(i, titulo) {
   document.getElementsByTagName("h3")[i].innerHTML = titulo;
 }
 
 
-
-
-
+//*CORRECCIONES**************************/
 
 
 
