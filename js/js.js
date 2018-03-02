@@ -102,6 +102,7 @@ function gestionarJson(dadesJson) {
     }
 
     mostrarRadio(i, tituloRadio, opRadio, radio);
+    radio++;
   }
 
 
@@ -116,7 +117,14 @@ function mostrarCheckbox(numPreg, titulo, opciones, c) {
 
   document.getElementsByTagName("h3")[numPreg].innerHTML = titulo;
 
-  var radioContainer = document.getElementsByClassName("checkboxDiv")[c];
+  var checkContainer = document.getElementsByClassName("checkboxDiv")[c];
+  var nombrePreg;
+
+  if (numPreg == 6) {
+    nombreAsignado = "seis";
+  } else {
+    nombreAsignado = "siete";
+  }
 
   for (j = 0; j < opciones.length; j++) {
 
@@ -124,16 +132,15 @@ function mostrarCheckbox(numPreg, titulo, opciones, c) {
     var label = document.createElement("label");
 
     label.innerHTML = opciones[j];
-    label.setAttribute("for", "check_" + j);
+    label.setAttribute("for", nombreAsignado + "_" + j);
 
     input.type = "checkbox";
-    input.name = "chek";
-    input.id = "check_" + j;
+    input.name = nombreAsignado;
+    input.id = nombreAsignado + "_" + j;
 
-    radioContainer.appendChild(input);
-    radioContainer.appendChild(label);
-    radioContainer.appendChild(document.createElement("br"));
-
+    checkContainer.appendChild(input);
+    checkContainer.appendChild(label);
+    checkContainer.appendChild(document.createElement("br"));
   }
 }
 
@@ -143,27 +150,31 @@ function mostrarRadio(numPreg, titulo, opcionesR, r) {
 
   var radioContainer = document.getElementsByClassName("radioDiv")[r];
 
+  var nombrePreg;
+
+  if (numPreg == 8) {
+    nombreAsignado = "ocho";
+  } else {
+    nombreAsignado = "nueve";
+  }
+
   for (j = 0; j < opcionesR.length; j++) {
 
     var input = document.createElement("input");
     var label = document.createElement("label");
 
     label.innerHTML = opcionesR[j];
-    label.setAttribute("for", "cacas_" + j);
+    label.setAttribute("for", nombreAsignado + "_" + j);
 
     input.type = "radio";
-    input.name = "cacas";
-    input.id = "cacas_" + j;
+    input.name = nombreAsignado;
+    input.id = nombreAsignado + "_" + j;
 
     radioContainer.appendChild(input);
     radioContainer.appendChild(label);
     radioContainer.appendChild(document.createElement("br"));
-
   }
-
-  
 }
-
 
 
 
