@@ -211,6 +211,12 @@ function mostrarText(i, titulo) {
 
 
 //*CORRECCIONES**************************/
+function corregirText(){
+  var s = formElement.elements[0].value;
+  if (s==)
+}
+
+
 
 
 
