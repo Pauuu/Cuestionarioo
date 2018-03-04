@@ -15,10 +15,12 @@ window.onload = function () {
   formElement.onsubmit = function () {
     corregirText();
     corregirSelect();
+    corregirRadio();
+    
 
     return false;
   }
-  
+
 
   // fichoro xml que está en el servidor rawgit
   var url = "https://rawgit.com/Pauuu/Cuestionarioo/master/json/json.json";
@@ -54,16 +56,11 @@ function gestionarJson(dadesJson) {
 
     respuestasText[i] = obj.question[i].answer;
   }
-
-
-
   //**text**************************/
-
 
 
   //**SELECT************************/
   var select = 0; //ENUMERA los selects
-
 
   for (i = 2; i < 4; i++) {
 
@@ -77,10 +74,8 @@ function gestionarJson(dadesJson) {
     mostrarSelect(i, tituloSelect, opSelect, select);
     respuestasSelect[select] = obj.question[i].answer;
     select++;
-
   }
   //**select************************/
-
 
 
   //MULTIPLE*************************/
@@ -94,9 +89,16 @@ function gestionarJson(dadesJson) {
     }
 
     mostrarMultiple(i, tituloMultiple, opMultiple, select);
+
+    var numRespuestasMultiple = obj.question[i].answer.length;
+    for (r = 0; r < numRespuestasMultiple; r++) {
+      respuestasMultiple[select - 2] = []; //manera "tonta" de inicializar un array bidimensional
+      respuestasMultiple[select - 2][r] = obj.question[i].answer[r];  //[num preg][index de respuesta]
+    }
     select++;
   }
   //**multiple***********************/
+
 
   //CHECKBOX*************************/
   var checkbox = 0;
@@ -115,6 +117,7 @@ function gestionarJson(dadesJson) {
   }
   //**checkbox***********************/
 
+
   //RADIO***************************/
   var radio = 0;
 
@@ -128,10 +131,9 @@ function gestionarJson(dadesJson) {
     }
 
     mostrarRadio(i, tituloRadio, opRadio, radio);
+    respuestasRadio[radio] = obj.question[radio].answer;
     radio++;
   }
-
-
   //**radio*************************/
 
 
@@ -239,8 +241,8 @@ function mostrarText(i, titulo) {
 //*CORRECCIONES**************************/
 
 function corregirText() {
-  for (p = 0; p < 2; p++) {
-    var respuesta = formElement.elements[p + 1].value;
+  for (p = 0; p < 4; p+=2) {
+    var respuesta = formElement.elements[p].value;
     if (respuesta == respuestasText[p]) {
       darRespuesta("P" + p + ": Exacto");
       nota += 1;
@@ -254,16 +256,61 @@ function corregirText() {
 
 function corregirSelect() {
   for (p = 2; p < 4; p++) {
+    var index = 0;
     var sel = formElement.elements[p];
 
-    if (sel.selectedIndex - 1 == respuestasSelect[i]) {
+    if (sel.selectedIndex - 1 == respuestasSelect[index]) {
       nota += 1;
       darRespuesta("P" + p + ": Correcto");
     } else {
       darRespuesta("P" + p + ": Incorrecto");
     }
+
+    index++;
   }
 }
+
+/*function corregirMultiple() {
+  for (p = 4; p < 6; p++) {
+    var sel = formElement.elements[p];
+    var acertado = [];
+    var fallo = false;
+
+    for (i = 1; i < sel.length; i++) {
+      var opt = sel.options[i];
+      if (opt.selected) {
+        acertado[i] = false;
+
+        for (j = 0; j < respuestasMultiple[p].length; j++) {
+          if (i - 1 == respuestasMultiple[p][i]){
+            acertado = true;
+          }
+        }
+      }
+    }
+  }
+}
+*/
+
+function corregirRadio() {
+  for (p = 8; p < 10; p++) {
+    var respuesta = formElement.elements[p].value;
+    var index = 0;
+
+    if (respuesta == respuestasRadio[index]) {
+      nota += 1;
+      darRespuesta("P" + p + ": Correcto");
+
+    } else {
+      if (respuesta != respuestasRadio[index]) {
+        darRespuesta("P" + p + ": Incorrecto");
+      }
+    }
+    index += 1;
+  }
+  darRespuesta(nota);
+}
+
 
 
 
