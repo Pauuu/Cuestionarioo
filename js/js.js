@@ -1,4 +1,20 @@
+var formElement = null;
+var respuestasText = [];
+var respuestasSelect = [];
+var respuestasMultiple = [];
+var respuestasCheckbox = [];
+var respuestasRadio = [];
+var nota = 0; //nota sobre 10 puntos 
+
+
+
 window.onload = function () {
+
+  //coorregir al pulsar boton
+  formElement = this.document.getElementById("formulario");
+  formElement.onsubmit = function(){
+    corregirText();
+  }
 
   // fichoro xml que está en el servidor rawgit
   var url = "https://rawgit.com/Pauuu/Cuestionarioo/master/json/json.json";
@@ -31,7 +47,11 @@ function gestionarJson(dadesJson) {
   for (i = 0; i < 2; i++) { //  TODOS LOS BUCLES EMPIEZAN POR 0 HASTA LLEGRAR A LA PREGUNTA i-1
     preguntasText = obj.question[i].title;
     mostrarText(i, preguntasText);
+
+    respuestasText[i] = obj.question[i].answer;
   }
+
+
 
   //**text**************************/
 
@@ -211,9 +231,25 @@ function mostrarText(i, titulo) {
 
 
 //*CORRECCIONES**************************/
-function corregirText(){
-  var s = formElement.elements[0].value;
-  if (s==)
+
+function corregirText() {
+  for (p = 0; p < 2; p++) {
+    var respuesta = formElement.elements[p+1].value;
+    if (respuesta == respuestasText[p]) {
+      darRespuesta("P" + p + ": Exacto");
+      nota += 1;
+    } else {
+      if (respuesta != respuestasText[p]) {
+        darRespuesta("P" + p + ": No es correcto");
+      }
+    }
+  }
+}
+
+function corregirSelect(){
+  for (p = 2; p < 4; p++){
+    
+  }
 }
 
 
@@ -221,3 +257,11 @@ function corregirText(){
 
 
 
+//*PRESENTACIONES**************************/
+function darRespuesta(r) {
+  var p = document.createElement("p");
+  var node = document.createTextNode(r);
+  p.appendChild(node);
+  document.getElementById("resultadosDiv").appendChild(p);
+}
+//**presentaciones*************************/
