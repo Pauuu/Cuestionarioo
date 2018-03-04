@@ -16,7 +16,7 @@ window.onload = function () {
     corregirText();
     corregirSelect();
     corregirRadio();
-    
+
 
     return false;
   }
@@ -241,21 +241,25 @@ function mostrarText(i, titulo) {
 //*CORRECCIONES**************************/
 
 function corregirText() {
-  for (p = 0; p < 4; p+=2) {
-    var respuesta = formElement.elements[p].value;
+  var answ = 0;
+
+  for (p = 0; p < 2; p++) {
+
+    var respuesta = formElement.elements[answ + 1].value;
     if (respuesta == respuestasText[p]) {
       darRespuesta("P" + p + ": Exacto");
       nota += 1;
     } else {
       if (respuesta != respuestasText[p]) {
-        darRespuesta("P" + p + ": No es correcto");
+        darRespuesta("P" + p  + ": No es correcto");
       }
     }
+    answ+=2;
   }
 }
 
 function corregirSelect() {
-  for (p = 2; p < 4; p++) {
+  for (p = 4; p < 8; p += 2) {
     var index = 0;
     var sel = formElement.elements[p];
 
@@ -271,7 +275,7 @@ function corregirSelect() {
 }
 
 /*function corregirMultiple() {
-  for (p = 4; p < 6; p++) {
+  for (p = 8; p < 12; p+=2) {
     var sel = formElement.elements[p];
     var acertado = [];
     var fallo = false;
@@ -293,7 +297,7 @@ function corregirSelect() {
 */
 
 function corregirRadio() {
-  for (p = 8; p < 10; p++) {
+  for (p = 12; p < 16; p += 2) {
     var respuesta = formElement.elements[p].value;
     var index = 0;
 
