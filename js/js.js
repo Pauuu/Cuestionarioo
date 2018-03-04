@@ -12,9 +12,13 @@ window.onload = function () {
 
   //coorregir al pulsar boton
   formElement = this.document.getElementById("formulario");
-  formElement.onsubmit = function(){
+  formElement.onsubmit = function () {
     corregirText();
+    corregirSelect();
+
+    return false;
   }
+  
 
   // fichoro xml que está en el servidor rawgit
   var url = "https://rawgit.com/Pauuu/Cuestionarioo/master/json/json.json";
@@ -71,7 +75,9 @@ function gestionarJson(dadesJson) {
     }
 
     mostrarSelect(i, tituloSelect, opSelect, select);
+    respuestasSelect[select] = obj.question[i].answer;
     select++;
+
   }
   //**select************************/
 
@@ -234,7 +240,7 @@ function mostrarText(i, titulo) {
 
 function corregirText() {
   for (p = 0; p < 2; p++) {
-    var respuesta = formElement.elements[p+1].value;
+    var respuesta = formElement.elements[p + 1].value;
     if (respuesta == respuestasText[p]) {
       darRespuesta("P" + p + ": Exacto");
       nota += 1;
@@ -246,9 +252,16 @@ function corregirText() {
   }
 }
 
-function corregirSelect(){
-  for (p = 2; p < 4; p++){
-    
+function corregirSelect() {
+  for (p = 2; p < 4; p++) {
+    var sel = formElement.elements[p];
+
+    if (sel.selectedIndex - 1 == respuestasSelect[i]) {
+      nota += 1;
+      darRespuesta("P" + p + ": Correcto");
+    } else {
+      darRespuesta("P" + p + ": Incorrecto");
+    }
   }
 }
 
