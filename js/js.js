@@ -4,6 +4,7 @@ var respuestasSelect = [];
 var respuestasMultiple = [];
 var respuestasCheckbox = [];
 var respuestasRadio = [];
+var answ = 0;
 var nota = 0; //nota sobre 10 puntos 
 
 
@@ -241,7 +242,6 @@ function mostrarText(i, titulo) {
 //*CORRECCIONES**************************/
 
 function corregirText() {
-  var answ = 0;
 
   for (p = 0; p < 2; p++) {
 
@@ -259,18 +259,20 @@ function corregirText() {
 }
 
 function corregirSelect() {
-  for (p = 4; p < 8; p += 2) {
-    var index = 0;
-    var sel = formElement.elements[p];
 
-    if (sel.selectedIndex - 1 == respuestasSelect[index]) {
+  for (p = 2; p < 4; p ++) {
+
+    var index = 0;
+    var sel = formElement.elements[answ + 1];
+
+    if (sel.selectedIndex == respuestasSelect[index]) {
       nota += 1;
       darRespuesta("P" + p + ": Correcto");
     } else {
       darRespuesta("P" + p + ": Incorrecto");
     }
-
     index++;
+    answ+=2;
   }
 }
 
