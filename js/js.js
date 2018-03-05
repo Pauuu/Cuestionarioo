@@ -1,8 +1,10 @@
 var formElement = null;
 var respuestasText = [];
 var respuestasSelect = [];
-var respuestasMultiple = [];
-var respuestasCheckbox = [];
+var respuestasMultiple1 = [];
+var respuestasMultiple2 = [];
+var respuestasCheckbox1 = [];
+var respuestasCheckbox2 = [];
 var respuestasRadio = [];
 var answ = 0;
 var nota = 0; //nota sobre 10 puntos 
@@ -16,6 +18,7 @@ window.onload = function () {
   formElement.onsubmit = function () {
     corregirText();
     corregirSelect();
+    corregirMultiple();
     corregirRadio();
 
 
@@ -91,11 +94,23 @@ function gestionarJson(dadesJson) {
 
     mostrarMultiple(i, tituloMultiple, opMultiple, select);
 
-    var numRespuestasMultiple = obj.question[i].answer.length;
-    for (r = 0; r < numRespuestasMultiple; r++) {
-      respuestasMultiple[select - 2] = []; //manera "tonta" de inicializar un array bidimensional
-      respuestasMultiple[select - 2][r] = obj.question[i].answer[r];  //[num preg][index de respuesta]
+    if (i == 4) {
+      var numRespuestasMultiple = obj.question[i].answer.length;
+
+      for (r = 0; r < numRespuestasMultiple; r++) {
+        respuestasMultiple1[r] = obj.question[i].answer[r];  //[index de respuesta]
+      }
+
+    } else if (i == 5) {
+      var numRespuestasMultiple = obj.question[i].answer.length;
+
+      for (r = 0; r < numRespuestasMultiple; r++) {
+        respuestasMultiple2[r] = obj.question[i].answer[r];  //[index de respuesta]
+      }
     }
+
+
+
     select++;
   }
   //**multiple***********************/
@@ -244,23 +259,23 @@ function mostrarText(i, titulo) {
 function corregirText() {
 
   for (p = 0; p < 2; p++) {
-
     var respuesta = formElement.elements[answ + 1].value;
+
     if (respuesta == respuestasText[p]) {
       darRespuesta("P" + p + ": Exacto");
       nota += 1;
     } else {
       if (respuesta != respuestasText[p]) {
-        darRespuesta("P" + p  + ": No es correcto");
+        darRespuesta("P" + p + ": No es correcto");
       }
     }
-    answ+=2;
+    answ += 2;
   }
 }
 
 function corregirSelect() {
 
-  for (p = 2; p < 4; p ++) {
+  for (p = 2; p < 4; p++) {
 
     var index = 0;
     var sel = formElement.elements[answ + 1];
@@ -272,35 +287,54 @@ function corregirSelect() {
       darRespuesta("P" + p + ": Incorrecto");
     }
     index++;
-    answ+=2;
+    answ += 2;
   }
 }
 
-/*function corregirMultiple() {
-  for (p = 8; p < 12; p+=2) {
-    var sel = formElement.elements[p];
+function corregirMultiple() {
+  for (p = 4; p < 6; p++) {
+    var resMul = [];
+
+    if (p == 4) {
+      resMul = respuestasMultiple1.slice();  //copia los valores del array a al array b
+    } else if (p == 5) {
+      resMul = respuestasMultiple2.slice();
+    }
+
+    var sel = formElement.elements[answ + 1];
     var acertado = [];
-    var fallo = false;
 
     for (i = 1; i < sel.length; i++) {
       var opt = sel.options[i];
       if (opt.selected) {
         acertado[i] = false;
 
-        for (j = 0; j < respuestasMultiple[p].length; j++) {
-          if (i - 1 == respuestasMultiple[p][i]){
-            acertado = true;
+        for (j = 0; j < resMul[j].length; j++) {
+          if (i - 1 == resMul[j]) {
+            acertado[i] = true;
+            nota += 1.0 / resMul[i].length;
           }
+        }
+
+        if (acertado[i] == true) {
+          darRespuesta("P" + p + "." + i + ": Correcto");
+        } else {
+          darRespuesta("P" + p + "." + i + ": Incorrecto");
         }
       }
     }
   }
 }
-*/
+
+function corregirCheckbox(){
+  
+}
+
 
 function corregirRadio() {
-  for (p = 12; p < 16; p += 2) {
-    var respuesta = formElement.elements[p].value;
+  answ = 16;
+  for (p = 8; p < 10; p++) {
+    var respuesta = formElement.elements[answ + 1].value;
     var index = 0;
 
     if (respuesta == respuestasRadio[index]) {
@@ -313,6 +347,7 @@ function corregirRadio() {
       }
     }
     index += 1;
+    answ += 2;
   }
   darRespuesta(nota);
 }
