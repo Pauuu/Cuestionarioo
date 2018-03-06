@@ -16,13 +16,13 @@ window.onload = function () {
 	//coorregir al pulsar boton
 	formElement = this.document.getElementById("formulario");
 	formElement.onsubmit = function () {
-		//if (comprobar() == true) {
+		if (comprobar() == true) {
 		corregirText();
 		corregirSelect();
 		corregirMultiple();
 		corregirCheckbox();
 		corregirRadio();
-		//}
+		}
 
 		return false;
 	}
@@ -167,7 +167,7 @@ function gestionarJson(dadesJson) {
 		}
 
 		mostrarRadio(i, tituloRadio, opRadio, radio);
-		respuestasRadio = obj.question[i].answer;
+		respuestasRadio[radio] = obj.question[i].answer;
 		radio++;
 	}
 	//**radio*************************/
