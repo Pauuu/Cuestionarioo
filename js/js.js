@@ -289,7 +289,7 @@ function corregirText() {
 				darRespuesta("P" + (p + 1) + ": No es correcto");
 			}
 		}
-		answ += 2;
+		
 	}
 }
 
@@ -423,34 +423,41 @@ function darRespuesta(r) {
 function comprobar() {
 	var f = formElement;
 	var checked = false;
+	var pregunta = 1;
 
-	// Comprobación del select normal
-	for (numPreg = -1; numPreg < 2; numPreg++) {
-		if (f.elements[numPreg + 2].value == "") {
-			f.elements[numPreg + 2].focus();
+	// Comprobación del text
+
+	for (numPreg = 0; numPreg < 2; numPreg++) {
+		if (f.elements[numPreg].value == "") {
+			f.elements[numPreg].focus();
+
 			alert("Por favor, selecciona una opcion en la pregunta " + (numPreg + 1));
 			return false;
 		}
+
 	}
 
-	// Comprobación del text
+	// Comprobación del select normal
 	for (numPreg = 2; numPreg < 4; numPreg++) {
-		if (f.elements[numPreg].value == "") {
-			f.elements[numPreg].focus();
-			alert("Por favor, responde la pregunta " + (numPreg + 1));
+		if (f.elements[(numPreg)].selectedIndex == 0) {
+			f.elements[(numPreg)].focus();
+			alert("Por favor, selecciona una opcion en la pregunta " + (numPreg + 1));
 			return false;
 		}
+
 	}
 
 	// Comprobación del select multiple
 	for (numPreg = 4; numPreg < 6; numPreg++) {
 		var multRespondido = false;
+
 		for (i = 1; i < (f.elements[numPreg].length); i++) {
 			var opt = f.elements[numPreg].options[i];
 			if (opt.selected) {
 				multRespondido = true;
 			}
 		}
+
 		if (!multRespondido) {
 			f.elements[numPreg].focus();
 			alert("Por favor, selecciona al menos una opcion en la pregunta " + (numPreg + 1));
@@ -462,38 +469,46 @@ function comprobar() {
 	for (numPreg = 6; numPreg < 8; numPreg++) {
 		var checked = false;
 		var nombre;
-		if (numPreg == 8) {
-			nombre = f.ocho;
+
+		if (numPreg == 6) {
+			nombre = f.seis;
 		} else {
-			nombre = f.nueve;
+			nombre = f.siete;
 		}
+
 		for (i = 0; i < nombre.length; i++) {
 			if (nombre[i].checked) {
 				checked = true;
 			}
 		}
+
 		if (!checked) {
 			nombre[0].focus();
 			alert("Por favor, selecciona al menos una opcion en la pregunta " + (numPreg + 1));
 			return false;
 		}
-	}
-	return true;
 
-	// Comprobación del radio
-	for (numPreg = 8; numPreg < 10; numPreg++) {
-		var nombreRadio;
-		if (numPreg == 6) {
-			nombreRadio = f.seis;
-		} else {
-			nombreRadio = f.siete;
-		}
-		if (nombreRadio.value == "") {
-			nombreRadio[0].focus();
-			alert("Por favor, responde la pregunta " + (numPreg + 1));
-			return false;
-		}
-	}
+		
 
+		// Comprobación del radio
+		for (numPreg = 8; numPreg < 10; numPreg++) {
+
+			var nombreRadio;
+
+			if (numPreg == 8) {
+				nombreRadio = f.ocho;
+			} else {
+				nombreRadio = f.nueve;
+			}
+
+			if (nombreRadio.value == "") {
+				nombreRadio[0].focus();
+				alert("Por favor, responde la pregunta " + (numPreg + 1));
+				return false;
+			}
+		}
+
+		return true;
+	}
 }
 //**presentaciones*************************/
