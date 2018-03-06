@@ -18,9 +18,9 @@
 		<question>
 			<type>select</type>
 			<title>El buscador mas famoso es...</title>
-				<option>El buscador mas famoso es...l</option>
-				<option>Google</option>
-				<option>Hypertext markup language</option>
+				<option>Googlel</option>
+				<option>DuckDuckGo</option>
+				<option>Bing</option>
 				<answer>0</answer>
 		</question>
 
@@ -46,13 +46,13 @@
 
 		<question>
 			<type>multiple</type>
-			<title>Marca las opciones que no sean colores</title>
+			<title>Marca las opciones que sean colores (no confundir con frutas :D)</title>
 				<option>Rojo</option>
 				<option>Elefante</option>
 				<option>Naranja</option>
 				<option>Naranja</option>
 				<answer>0</answer>
-				<answer>2</answer>
+				<answer>3</answer>
 		</question>
 
 		<question>
@@ -63,7 +63,9 @@
 				<option>Jamon</option>
 				<option>Olivas</option>
 				<answer>0</answer>
+				<answer>1</answer>
 				<answer>2</answer>
+				<answer>3</answer>
 		</question>
 
 		<question>
@@ -80,11 +82,10 @@
 		<question>
 			<type>radio</type>
 			<title>Si van dos y cae uno, ¿quien es el que cae?</title>
-				<option>uno</option>
-				<option>verde</option>
-				<option>fresa</option>
-				<option>violeta</option>
-				<answer>0</answer>
+				<option>El de la derecha</option>
+				<option>El de la izquierda</option>
+				<option>El de enmedio</option>
+				<option>Juanito</option>
 				<answer>2</answer>
 		</question>
 
@@ -95,8 +96,7 @@
 				<option>No</option>
 				<option>Es un tiburón</option>
 				<option>La luna y el sol no son peces</option>
-				<answer>0</answer>
-				<answer>2</answer>
+				<answer>1</answer>
 		</question>   
 	</questions>
 
