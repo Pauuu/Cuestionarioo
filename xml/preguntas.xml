@@ -17,9 +17,9 @@
 
 		<question>
 			<type>select</type>
-			<title>HTML son las iniciales de...</title>
-				<option>Hyper Text Transfer Protocol</option>
-				<option>File Transfer Protocol</option>
+			<title>El buscador mas famoso es...</title>
+				<option>El buscador mas famoso es...l</option>
+				<option>Google</option>
 				<option>Hypertext markup language</option>
 				<answer>0</answer>
 		</question>

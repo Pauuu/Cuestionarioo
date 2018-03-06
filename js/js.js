@@ -16,13 +16,13 @@ window.onload = function () {
 	//coorregir al pulsar boton
 	formElement = this.document.getElementById("formulario");
 	formElement.onsubmit = function () {
-		if (comprobar() == true) {
-			corregirText();
-			corregirSelect();
-			corregirMultiple();
-			corregirCheckbox();
-			corregirRadio();
-		}
+		//if (comprobar() == true) {
+		corregirText();
+		corregirSelect();
+		corregirMultiple();
+		corregirCheckbox();
+		corregirRadio();
+		//}
 
 		return false;
 	}
@@ -34,7 +34,7 @@ window.onload = function () {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
-			// función personalizada que gestiona la respuesta a la petición de fichero
+			// función personalizada que gestiona la checkeado a la petición de fichero
 			gestionarJson(this.responseText);
 		}
 	};
@@ -44,7 +44,7 @@ window.onload = function () {
 }
 
 
-// función personalizada que gestiona la respuesta a la petición de fichero
+// función personalizada que gestiona la checkeado a la petición de fichero
 function gestionarJson(dadesJson) {
 
 	var obj = JSON.parse(dadesJson);
@@ -102,14 +102,14 @@ function gestionarJson(dadesJson) {
 			var numRespuestasMultiple = obj.question[i].answer.length;
 
 			for (r = 0; r < numRespuestasMultiple; r++) {
-				respuestasMultiple1[r] = obj.question[i].answer[r];  //[index de respuesta]
+				respuestasMultiple1[r] = obj.question[i].answer[r];  //[index de checkeado]
 			}
 
 		} else if (i == 5) {
 			var numRespuestasMultiple = obj.question[i].answer.length;
 
 			for (r = 0; r < numRespuestasMultiple; r++) {
-				respuestasMultiple2[r] = obj.question[i].answer[r];  //[index de respuesta]
+				respuestasMultiple2[r] = obj.question[i].answer[r];  //[index de checkeado]
 			}
 		}
 
@@ -145,7 +145,7 @@ function gestionarJson(dadesJson) {
 			var numRespuestasCheck = obj.question[i].answer.length;
 
 			for (r = 0; r < numRespuestasCheck; r++) {
-				respuestasCheckbox2[r] = obj.question[i].answer[r];  //[index de respuesta]
+				respuestasCheckbox2[r] = obj.question[i].answer[r];  //[index de checkeado]
 			}
 		}
 
@@ -167,7 +167,7 @@ function gestionarJson(dadesJson) {
 		}
 
 		mostrarRadio(i, tituloRadio, opRadio, radio);
-		respuestasRadio[radio] = obj.question[radio].answer;
+		respuestasRadio = obj.question[i].answer;
 		radio++;
 	}
 	//**radio*************************/
@@ -279,17 +279,17 @@ function mostrarText(i, titulo) {
 function corregirText() {
 
 	for (p = 0; p < 2; p++) {
-		var respuesta = formElement.elements[answ + 1].value;
+		var checkeado = formElement.elements[p].value;
 
-		if (respuesta == respuestasText[p]) {
+		if (checkeado == respuestasText[p]) {
 			darRespuesta("P" + (p + 1) + ": Exacto");
 			nota += 1;
 		} else {
-			if (respuesta != respuestasText[p]) {
+			if (checkeado != respuestasText[p]) {
 				darRespuesta("P" + (p + 1) + ": No es correcto");
 			}
 		}
-		
+
 	}
 }
 
@@ -298,7 +298,7 @@ function corregirSelect() {
 	var index = 0;
 
 	for (p = 2; p < 4; p++) {
-		var sel = formElement.elements[answ + 1];
+		var sel = formElement.elements[p];
 
 		if (sel.selectedIndex - 1 == respuestasSelect[index]) {
 			nota += 1;
@@ -322,18 +322,18 @@ function corregirMultiple() {
 			resMul = respuestasMultiple2.slice();
 		}
 
-		var sel = formElement.elements[answ + 1];
+		var sel = formElement.elements[p];
 		var acertado = [];
 
 		for (i = 1; i < sel.length; i++) {
 			var opt = sel.options[i];
 			if (opt.selected) {
-				acertado[i] = false;
+				acertado[i - 1] = false;
 
 				for (j = 0; j < resMul.length; j++) {
 					if (i - 1 == resMul[j]) {
 						acertado[i] = true;
-						nota += 1.0 / resMul[i].length;
+						nota += 1.0 / resMul.length;
 					}
 				}
 
@@ -341,11 +341,11 @@ function corregirMultiple() {
 				if (acertado[i] == true) {
 					darRespuesta("P" + (p + 1) + ": Opción " + (i + 1) + " Correcta");
 				} else {
-					darRespuesta("P" + (p + 1) + ": Opción " + (i + 1) + " Correcta");
+					darRespuesta("P" + (p + 1) + ": Opción " + (i + 1) + " Incorrecta");
 				}
 			}
 		}
-		answ += 2;
+
 	}
 }
 
@@ -381,32 +381,48 @@ function corregirCheckbox() {
 				}
 			}
 		}
-		answ += 2;
 	}
 }
 
 
 function corregirRadio() {
+	var index = 0;
+
 	for (p = 8; p < 10; p++) {
-		var respuesta = formElement.elements[answ + 1].value;
-		var index = 0;
+		var f = formElement;
+		var acertado;
+		
 
-		if (respuesta == respuestasRadio[index]) {
-			nota += 1;
-			darRespuesta("P" + (p + 1) + ": Correcto");
+		var checkeado;
 
-		} else {
-			if (respuesta != respuestasRadio[index]) {
-				darRespuesta("P" + (p + 1) + ": Incorrecto");
+		if (p == 8) {
+			pregunta = f.ocho;
+		} else if (p == 9) {
+			pregunta = f.nueve;
+		}
+
+		for (i = 0; i < pregunta.length; i++) {
+
+			if (pregunta[i].checked == true) {
+				acertado = false;
+
+					if (i == respuestasRadio[index]) {
+						acertado = true;
+					}
+				
+
+				if (acertado == true) {
+					nota ++;  //dividido por el número de respuestas correctas   
+					darRespuesta("P " + (p + 1) + ": Opción " + (i + 1) + " Correcta");
+				} else {
+					darRespuesta("P " + (p + 1) + ": Opción " + (i + 1) + " Incorrecta");
+				}
 			}
 		}
-		index += 1;
-		answ += 2;
+		index++;
 	}
 	darRespuesta(nota);
 }
-
-
 
 
 
@@ -488,7 +504,7 @@ function comprobar() {
 			return false;
 		}
 
-		
+
 
 		// Comprobación del radio
 		for (numPreg = 8; numPreg < 10; numPreg++) {
