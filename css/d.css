@@ -1,0 +1,26 @@
+body{
+    background-color: #a2ea5a79;
+    font-family: 'Lato', sans-serif;;
+}
+
+#instrucciones{
+    margin: 2%;
+    
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}
+
+#resultadosDiv{
+    display:none;
+    margin:1%;
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}
+
+.preg{
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}

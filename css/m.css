@@ -1,0 +1,54 @@
+body{
+    background-color: #a2ea5a79;
+    font-family: 'Lato', sans-serif;
+    font-size: 120%;
+}
+
+#instrucciones{
+    margin: 2%;
+    
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}
+
+form{
+    font-size: 120%;
+    /*! text-align: center; */
+}
+
+select{
+    font-size:100%;
+    width: 100%;
+}
+
+
+#resultadosDiv{
+    display:none;
+    margin:1%;
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}
+
+.preg{
+    border-style: dotted;
+    background-color: #a2ea5a79;
+    padding: 2%;
+}
+
+.checkboxDiv{
+    font-size: 190%;
+}
+
+.radioDiv{
+    
+    font-size: 110%;
+}
+
+input{
+    padding: 19px 144px;    
+    font-size: 215%;    
+    width:18%;
+    height:18%;
+}

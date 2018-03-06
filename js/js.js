@@ -6,7 +6,6 @@ var respuestasMultiple2 = [];
 var respuestasCheckbox1 = [];
 var respuestasCheckbox2 = [];
 var respuestasRadio = [];
-var answ = 0;
 var nota = 0; //nota sobre 10 puntos 
 
 
@@ -23,7 +22,6 @@ window.onload = function () {
 			corregirCheckbox();
 			corregirRadio();
 		}
-
 		return false;
 	}
 
@@ -308,7 +306,6 @@ function corregirSelect() {
 		}
 
 		index++;
-		answ += 2;
 	}
 }
 
@@ -421,7 +418,8 @@ function corregirRadio() {
 		}
 		index++;
 	}
-	darRespuesta(nota);
+
+	darRespuesta("NOTA: " + nota);
 }
 
 
@@ -430,6 +428,8 @@ function corregirRadio() {
 
 //*PRESENTACIONES**************************/
 function darRespuesta(r) {
+	document.getElementById("resultadosDiv").style.display="block";
+
 	var p = document.createElement("p");
 	var node = document.createTextNode(r);
 	p.appendChild(node);
