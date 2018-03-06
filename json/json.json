@@ -12,11 +12,11 @@
       },
       {
          "type": "select",
-         "title": "HTML son las iniciales de...",
+         "title": "El buscador mas famoso es...",
          "option": [
-            "Hyper Text Transfer Protocol",
-            "File Transfer Protocol",
-            "Hypertext markup language"
+            "Google",
+            "DuckDuckGo",
+            "Bing"
          ],
          "answer": "0"
       },
@@ -46,7 +46,7 @@
       },
       {
          "type": "multiple",
-         "title": "Marca las opciones que no sean colores",
+         "title": "Marca las opciones que sean colores (no confundir con frutas :D)",
          "option": [
             "Rojo",
             "Elefante",
@@ -55,7 +55,7 @@
          ],
          "answer": [
             "0",
-            "2"
+            "3"
          ]
       },
       {
@@ -69,12 +69,14 @@
          ],
          "answer": [
             "0",
-            "2"
+            "1",
+            "2",
+            "3"
          ]
       },
       {
          "type": "checkbox",
-         "title": "¿Que colores, combinados entre si, forman el verda?",
+         "title": "¿Que colores, combinados entre si, forman el verde?",
          "option": [
             "Amarillo",
             "Rojo",
@@ -90,15 +92,12 @@
          "type": "radio",
          "title": "Si van dos y cae uno, ¿quien es el que cae?",
          "option": [
-            "uno",
-            "verde",
-            "fresa",
-            "violeta"
+            "El de la derecha",
+            "El de la izquierda",
+            "El de enmedio",
+            "Juanito"
          ],
-         "answer": [
-            "0",
-            "2"
-         ]
+         "answer": "2"
       },
       {
          "type": "radio",
@@ -109,10 +108,7 @@
             "Es un tiburón",
             "La luna y el sol no son peces"
          ],
-         "answer": [
-            "0",
-            "2"
-         ]
+         "answer": "1"
       }
    ]
 }
