@@ -17,11 +17,11 @@ window.onload = function () {
 	formElement = this.document.getElementById("formulario");
 	formElement.onsubmit = function () {
 		if (comprobar() == true) {
-		corregirText();
-		corregirSelect();
-		corregirMultiple();
-		corregirCheckbox();
-		corregirRadio();
+			corregirText();
+			corregirSelect();
+			corregirMultiple();
+			corregirCheckbox();
+			corregirRadio();
 		}
 
 		return false;
@@ -391,7 +391,7 @@ function corregirRadio() {
 	for (p = 8; p < 10; p++) {
 		var f = formElement;
 		var acertado;
-		
+
 
 		var checkeado;
 
@@ -406,13 +406,13 @@ function corregirRadio() {
 			if (pregunta[i].checked == true) {
 				acertado = false;
 
-					if (i == respuestasRadio[index]) {
-						acertado = true;
-					}
-				
+				if (i == respuestasRadio[index]) {
+					acertado = true;
+				}
+
 
 				if (acertado == true) {
-					nota ++;  //dividido por el número de respuestas correctas   
+					nota++;  //dividido por el número de respuestas correctas   
 					darRespuesta("P " + (p + 1) + ": Opción " + (i + 1) + " Correcta");
 				} else {
 					darRespuesta("P " + (p + 1) + ": Opción " + (i + 1) + " Incorrecta");
