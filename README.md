@@ -1,6 +1,6 @@
 # Cuestionario
 
-Trabajo de la segunda evaluacion del módulo de marcas.
+Trabajo de la segunda evaluación del módulo de marcas.
 
 Es un pequeño cuestionario para conocer el funcionamiento de los formularios en HTML.
 
@@ -16,7 +16,7 @@ Se basa en un conjunto de 10 preguntas en total con unos 5 tipos de pregunta dis
 
 ---
 ## Funcionamiento
-El .js lee las preguntas del archivo .JSON desde rawgit.
+El archivo .js lee las preguntas del archivo .JSON desde rawgit.
 Una vez leídas las preguntas, las carga en el HTML y guarda las respuestas.
 
 Al final del cuestionario se calculará la nota final SOLO si se han contestado todas las preguntas del cuestionario.
