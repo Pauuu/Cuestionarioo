@@ -1,6 +1,8 @@
 
 # Cuestionario
 
+### [NOTA: Depurado en navegador Firefox. Chrome no carga css de dispositivo móvil]
+
 Trabajo de la segunda evaluación del módulo de marcas.
 
 Es un pequeño cuestionario para conocer el funcionamiento de los formularios en HTML.
