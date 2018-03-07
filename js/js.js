@@ -6,37 +6,40 @@ var respuestasMultiple2 = [];
 var respuestasCheckbox1 = [];
 var respuestasCheckbox2 = [];
 var respuestasRadio = [];
-var nota = 0; //nota sobre 10 puntos 
+var nota = 0;
+var comprobado = false;
 
 
 
 window.onload = function () {
 
-	//coorregir al pulsar boton
 	formElement = this.document.getElementById("formulario");
+
 	formElement.onsubmit = function () {
-		if (comprobar() == true) {
-			corregirText();
-			corregirSelect();
-			corregirMultiple();
-			corregirCheckbox();
-			corregirRadio();
+
+		if (comprobado == false) {
+			if (comprobar() == true) {
+				corregirText();
+				corregirSelect();
+				corregirMultiple();
+				corregirCheckbox();
+				corregirRadio();
+				darNota();
+				comprobado = true;
+			}
+			return false;
 		}
-		return false;
 	}
 
-
-	// fichoro xml que está en el servidor rawgit
 	var url = "https://rawgit.com/Pauuu/Cuestionarioo/master/json/json.json";
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
-			// función personalizada que gestiona la checkeado a la petición de fichero
 			gestionarJson(this.responseText);
 		}
 	};
-	xhttp.open("GET", url, true); //url del fichero
+	xhttp.open("GET", url, true); 
 	xhttp.send();
 
 }
@@ -419,16 +422,17 @@ function corregirRadio() {
 		index++;
 	}
 
+}
+
+function darNota() {
 	darRespuesta("NOTA: " + nota);
 }
 
 
 
-
-
 //*PRESENTACIONES**************************/
 function darRespuesta(r) {
-	document.getElementById("resultadosDiv").style.display="block";
+	document.getElementById("resultadosDiv").style.display = "block";
 
 	var p = document.createElement("p");
 	var node = document.createTextNode(r);
@@ -528,3 +532,4 @@ function comprobar() {
 	}
 }
 //**presentaciones*************************/
+
