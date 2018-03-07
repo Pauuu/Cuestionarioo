@@ -26,7 +26,7 @@ Dependiendo del número de correctas, se calcula la nota final.
 
 ---
 =======
-# Cestionario
+# Cuestionario
 
 Trabajo de la segunda evaluacion del módulo de marcas.
 
