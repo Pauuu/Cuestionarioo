@@ -1,11 +1,15 @@
 # Cuestionario
+## Trabajo de la segunda evaluación del módulo de marcas.
 
-[HTML Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/formulario.html) 
-[JS Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/js/js.js)
-[CSS Minimizado movil](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/css/m.css)
-[CSS Minimizado desktop](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/css/d.css)
++ [HTML Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/formulario.html) 
 
-Trabajo de la segunda evaluación del módulo de marcas.
++ [JS Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/js/js.js)
+
++ [CSS Minimizado movil](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/css/m.css)
+
++ [CSS Minimizado desktop](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/css/d.css)
+
+
 
 Es un pequeño cuestionario para conocer el funcionamiento de los formularios en HTML. Las preguntas no tienen una temática en especial, ya que las preguntas solo están escritas para realizar el ejercicio.
 
