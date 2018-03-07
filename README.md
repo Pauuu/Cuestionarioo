@@ -1,4 +1,7 @@
 # Cuestionario
+
+### [NOTA: Depurado en navegador Firefox. En mi caso, Chrome no carga css de dispositivo móvil]
+
 ## Trabajo de la segunda evaluación del módulo de marcas.
 
 + [Link a Rawgit](https://rawgit.com/Pauuu/Cuestionarioo/master/formulario.html)
