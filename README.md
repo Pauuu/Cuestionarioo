@@ -1,6 +1,8 @@
 # Cuestionario
 ## Trabajo de la segunda evaluación del módulo de marcas.
 
++ [Link a Rawgit](https://rawgit.com/Pauuu/Cuestionarioo/master/formulario.html)
+
 + [HTML Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/formulario.html) 
 
 + [JS Minimizado](https://github.com/Pauuu/Cuestionarioo/blob/Minimificaciones/js/js.js)
