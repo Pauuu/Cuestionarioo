@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Cuestionario
 
 Trabajo de la segunda evaluación del módulo de marcas.
@@ -25,7 +24,6 @@ El cuestionario se corrige comparando las respuestas indicadas en el .JSON con l
 Dependiendo del número de correctas, se calcula la nota final.
 
 ---
-=======
 # Cestionario
 
 Trabajo de la segunda evaluacion del módulo de marcas.
@@ -33,4 +31,3 @@ Trabajo de la segunda evaluacion del módulo de marcas.
 Es un pequeño cuestionario para conocer el funcionamiento de los formularios en HTML.
 
 
->>>>>>> Stashed changes
